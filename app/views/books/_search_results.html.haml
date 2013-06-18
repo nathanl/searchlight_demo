@@ -1,0 +1,16 @@
+- if @books.any?
+  %table
+    %thead
+      %th Category Name
+      %th Author First Name
+      %th Author Last Name
+      %th Title
+    %tbody
+      - @books.each do |book|
+        %tr
+          %td= book.category.name
+          %td= book.author.first_name
+          %td= book.author.last_name
+          %td= book.title
+- else
+  Sadly, there are no matching books as of #{I18n.l Time.now}.

@@ -1,0 +1,8 @@
+%h1 Book Search
+
+= render 'search_form', search: @search, remote_opt: true
+
+%h2 Book Results
+
+#book_search_results
+  = render 'search_results'
