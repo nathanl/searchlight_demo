@@ -13,7 +13,7 @@ class BookSearch < Searchlight::Search
   end
 
   def search_author_name_like
-    search.joins(:author).where("concat(authors.first_name, ' ', authors.last_name) ILIKE ?", "%#{author_name_like}%")
+    search.joins(:author).merge(Author.name_like(author_name_like))
   end
 
   def search_author_also_wrote_in_category_id
