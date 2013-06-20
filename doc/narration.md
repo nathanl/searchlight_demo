@@ -29,7 +29,7 @@ Before we make our search more complex, here's how we're using the search class 
 
 [show form] The search form uses `form_for @search`, which is an instance of our search class. [show controller] With each request, the controller builds a new search instance using the options from the form. With no options to filter by, the search will return all books.
 
-Let's add the ability to search using any part of the author's name. [add search option and paste in method] Here we join the authors table, build a string representing the full name, and do a case-insensitive match using Postgres syntax. [paste in form code] We also add an input to the form. [do search like 'el Silver']
+Let's add the ability to search using any part of the author's name. [add search option and paste in method] Here we join the authors table, build a string representing the full name, and do a case-insensitive match using Postgres syntax. [paste in form code] We also add an input to the form. [do search like 'U' then like 'el silver']
 
 Let's do something harder. [fade to updated form] Here we can search using other books the author wrote. For instance, let's get science fiction books by authors who also wrote for children.
 

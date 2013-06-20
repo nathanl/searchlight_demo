@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'rails',          '3.2.13'
+gem 'rails',          '~> 4.0.0.rc2'
 
 gem 'pg',             '~> 0.15'
 gem 'searchlight',    '~> 1.2.2'
@@ -10,8 +10,8 @@ gem 'faker',          '~> 1.1.2'
 
 gem 'haml',           '~> 4'
 
-gem 'sass-rails',     '~> 3.2.3'
-gem 'coffee-rails',   '~> 3.2.1'
-gem 'uglifier',       '>= 1.0.3'
+gem 'sass-rails',     '~> 4.0.0.rc2'
+gem 'coffee-rails',   '~> 4.0.0'
+gem 'uglifier',       '~> 2.1.1'
 
-gem 'jquery-rails'
+gem 'jquery-rails',   '~> 3.0'
