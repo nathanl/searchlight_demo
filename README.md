@@ -1,7 +1,5 @@
-# BookSearch
+# BookFinder
 
-This is a demo app for Searchlight. One example of a fairly complex search is:
+This is a demo app for the [Searchlight](https://github.com/nathanl/searchlight) ruby gem.
 
-```ruby
-BookSearch.new(category: 'Science Fiction', author_also_wrote_in_category: 'Religion').results
-```
+It's the code behind [this tutorial video](https://vimeo.com/69179161).
