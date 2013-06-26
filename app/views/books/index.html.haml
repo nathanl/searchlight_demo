@@ -1,4 +1,4 @@
-%h1 Book Search
+%h1 Book Finder
 
 = render 'search_form', search: @search, remote_opt: true
 
@@ -6,3 +6,12 @@
 
 #book_search_results
   = render 'search_results'
+
+#links
+  %p
+    A demo of
+    %a{href: 'https://github.com/nathanl/searchlight'}
+      the Searchlight Ruby gem.
+    Demo code is viewable at
+    %a{href: 'https://github.com/nathanl/bookfinder'}
+      github.com/nathanl/bookfinder
