@@ -1,6 +1,6 @@
 class BookSearch < Searchlight::Search
 
-  search_on Book
+  search_on Book.all
 
   searches :title, :category_id, :author_name_like, :author_also_wrote_in_category_id
 

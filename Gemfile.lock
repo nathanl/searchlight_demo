@@ -91,7 +91,7 @@ GEM
       railties (>= 4.0.0.beta, < 5.0)
       sass (>= 3.1.10)
       sprockets-rails (~> 2.0.0)
-    searchlight (1.2.3)
+    searchlight (3.0.0)
       named (~> 1.0)
     sprockets (2.10.0)
       hike (~> 1.2)
@@ -128,5 +128,5 @@ DEPENDENCIES
   rails3_serve_static_assets!
   rails_log_stdout!
   sass-rails (~> 4.0.0.rc2)
-  searchlight (~> 1.2.2)
+  searchlight (~> 3.0.0)
   uglifier (~> 2.1.1)

@@ -8,7 +8,7 @@ class BooksController < ApplicationController
   protected
 
   def search_params
-    params.delete(:search) || {}
+    @search_params ||= params.delete(:book_search) || {}
   end
 
 end

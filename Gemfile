@@ -4,7 +4,7 @@ ruby "2.0.0"
 gem 'rails',          '~> 4.0.0.rc2'
 
 gem 'pg',             '~> 0.15'
-gem 'searchlight',    '~> 1.2.2'
+gem 'searchlight',    '~> 3.0.0'
 
 gem 'american_date',  '~> 1.1'
 gem 'faker',          '~> 1.1.2'
