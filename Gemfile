@@ -10,6 +10,7 @@ gem 'american_date',  '~> 1.1'
 gem 'faker',          '~> 1.1.2'
 
 gem 'haml',           '~> 4.0'
+gem 'redcarpet',      '~> 3.1'
 
 gem 'sass-rails',     '~> 4.0'
 gem 'coffee-rails',   '~> 4.0'
