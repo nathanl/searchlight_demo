@@ -1,4 +1,3 @@
-# This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
 
 Author.destroy_all
@@ -10,22 +9,22 @@ Category.destroy_all
 
   Book.create!(
     title: "The Runaway Bunny",
-    author: Author.find_or_create_by_first_name_and_last_name("Margaret", "Brown"),
+    author: Author.where(first_name: "Margaret", last_name: "Brown").first_or_create,
     category: category
   )
   Book.create!(
     title: "The Cat in the Hat",
-    author: Author.find_or_create_by_first_name_and_last_name("Theodor", "Seuss"),
+    author: Author.where(first_name: "Theodor", last_name: "Seuss").first_or_create,
     category: category
   )
   Book.create!(
     title: "The Magician's Nephew",
-    author: Author.find_or_create_by_first_name_and_last_name("CS", "Lewis"),
+    author: Author.where(first_name: "CS", last_name: "Lewis").first_or_create,
     category: category
   )
   Book.create!(
     title: "Where the Sidewalk Ends",
-    author: Author.find_or_create_by_first_name_and_last_name("Shel", "Silverstein"),
+    author: Author.where(first_name: "Shel", last_name: "Silverstein").first_or_create,
     category: category
   )
 end
@@ -35,12 +34,12 @@ end
 
   Book.create!(
     title: "Cookwise",
-    author: Author.find_or_create_by_first_name_and_last_name("Shirley", "Corriher"),
+    author: Author.where(first_name: "Shirley", last_name: "Corriher").first_or_create,
     category: category
   )
   Book.create!(
     title: "New Vegetarian Cuisine",
-    author: Author.find_or_create_by_first_name_and_last_name("Linda", "Rosenweig"),
+    author: Author.where(first_name: "Linda", last_name: "Rosenweig").first_or_create,
     category: category
   )
 end
@@ -50,7 +49,7 @@ end
 
   Book.create!(
     title: "Sailing Alone Around the Room",
-    author: Author.find_or_create_by_first_name_and_last_name("Billy", "Collins"),
+    author: Author.where(first_name: "Billy", last_name: "Collins").first_or_create,
     category: category
   )
 end
@@ -60,27 +59,27 @@ end
 
   Book.create!(
     title: "Practical Object-Oriented Design in Ruby",
-    author: Author.find_or_create_by_first_name_and_last_name("Sandy", "Metz"),
+    author: Author.where(first_name: "Sandy", last_name: "Metz").first_or_create,
     category: category
   )
   Book.create!(
     title: "Eloquent Ruby",
-    author: Author.find_or_create_by_first_name_and_last_name("Russ", "Olsen"),
+    author: Author.where(first_name: "Russ", last_name: "Olsen").first_or_create,
     category: category
   )
   Book.create!(
     title: "Clean Code",
-    author: Author.find_or_create_by_first_name_and_last_name("Bob", "Martin"),
+    author: Author.where(first_name: "Bob", last_name: "Martin").first_or_create,
     category: category
   )
   Book.create!(
     title: "Javascript: The Good Parts",
-    author: Author.find_or_create_by_first_name_and_last_name("Douglas", "Crockford"),
+    author: Author.where(first_name: "Douglas", last_name: "Crockford").first_or_create,
     category: category
   )
   Book.create!(
     title: "CSS: The Definitive Guide",
-    author: Author.find_or_create_by_first_name_and_last_name("Eric", "Meyer"),
+    author: Author.where(first_name: "Eric", last_name: "Meyer").first_or_create,
     category: category
   )
 end
@@ -90,12 +89,12 @@ end
 
   Book.create!(
     title: "Don't Waste Your Life",
-    author: Author.find_or_create_by_first_name_and_last_name("John", "Piper"),
+    author: Author.where(first_name: "John", last_name: "Piper").first_or_create,
     category: category
   )
   Book.create!(
     title: "Mere Christianity",
-    author: Author.find_or_create_by_first_name_and_last_name("CS", "Lewis"),
+    author: Author.where(first_name: "CS", last_name: "Lewis").first_or_create,
     category: category
   )
 end
@@ -105,17 +104,17 @@ end
 
   Book.create!(
     title: "The Code Book",
-    author: Author.find_or_create_by_first_name_and_last_name("Simon", "Singh"),
+    author: Author.where(first_name: "Simon", last_name: "Singh").first_or_create,
     category: category
   )
   Book.create!(
     title: "Breakthroughs in Science",
-    author: Author.find_or_create_by_first_name_and_last_name("Isaac", "Asimov"),
+    author: Author.where(first_name: "Isaac", last_name: "Asimov").first_or_create,
     category: category
   )
   Book.create!(
     title: "Guns, Germs and Steel",
-    author: Author.find_or_create_by_first_name_and_last_name("Jared", "Diamond"),
+    author: Author.where(first_name: "Jared", last_name: "Diamond").first_or_create,
     category: category
   )
 end
@@ -125,17 +124,17 @@ end
 
   Book.create!(
     title: "The Caves of Steel",
-    author: Author.find_or_create_by_first_name_and_last_name("Isaac", "Asimov"),
+    author: Author.where(first_name: "Isaac", last_name: "Asimov").first_or_create,
     category: category
   )
   Book.create!(
     title: "Out of the Silent Planet",
-    author: Author.find_or_create_by_first_name_and_last_name("CS", "Lewis"),
+    author: Author.where(first_name: "CS", last_name: "Lewis").first_or_create,
     category: category
   )
   Book.create!(
     title: "Jurassic Park",
-    author: Author.find_or_create_by_first_name_and_last_name("Michael", "Crighton"),
+    author: Author.where(first_name: "Michael", last_name: "Crighton").first_or_create,
     category: category
   )
 end
