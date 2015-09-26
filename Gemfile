@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
-ruby "2.1.5"
+ruby "2.1.2"
 
-gem 'rails',          '~> 4.1.0'
+gem 'rails',          '~> 4.2.1'
 
 gem 'pg',             '~> 0.15'
 gem 'searchlight',    '~> 3.0.0'
