@@ -6,6 +6,7 @@
       %th Author Last Name
       %th Title
       %th Board Book?
+      %th In Print?
     %tbody
       - @books.each do |book|
         %tr
@@ -14,5 +15,6 @@
           %td= book.author.last_name
           %td= book.title
           %td= book.board_book ? "Yes" : "No"
+          %td= book.in_print ? "Yes" : "No"
 - else
   Sadly, there are no matching books as of #{I18n.l Time.now}.

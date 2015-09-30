@@ -9,7 +9,7 @@ class BookSearch < Searchlight::Search
 
   def options
     super.tap { |opts|
-      # opts[:title] ||= "yarrr"
+      opts[:in_print] ||= "either"
     }
   end
 
@@ -36,6 +36,11 @@ class BookSearch < Searchlight::Search
 
   def search_board_book
     query.where(board_book: checked?(options[:board_book]))
+  end
+
+  def search_in_print
+    return query if options[:in_print].to_s == "either"
+    query.where(in_print: checked?(options[:in_print]))
   end
 
 end

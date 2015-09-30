@@ -144,4 +144,22 @@ end
     author: Author.where(first_name: "Michael", last_name: "Crighton").first_or_create,
     category: category
   )
+
+  Book.create!(
+    title: "Airframe",
+    author: Author.where(first_name: "Michael", last_name: "Crighton").first_or_create,
+    category: category,
+    in_print: false,
+  )
+end
+
+'Literature'.tap do |category_name|
+  category = Category.create!(name: category_name)
+
+  Book.create!(
+    title: "The Allegory of Love",
+    author: Author.where(first_name: "CS", last_name: "Lewis").first_or_create,
+    category: category,
+    in_print: false,
+  )
 end

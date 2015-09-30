@@ -19,5 +19,9 @@
     = f.label   :board_book
     = f.check_box  :board_book
 
+  %fieldset
+    = f.label   :in_print
+    = f.select  :in_print, [["Yes", true], ["No", false], ["Either", "either"]]
+
   %button{type: :reset} Clear
   = f.submit 'Search'

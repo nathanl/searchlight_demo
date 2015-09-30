@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150926101307) do
+ActiveRecord::Schema.define(version: 20150930132008) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,6 +26,7 @@ ActiveRecord::Schema.define(version: 20150926101307) do
     t.integer "author_id"
     t.integer "category_id"
     t.boolean "board_book",  default: false
+    t.boolean "in_print",    default: true
   end
 
   create_table "categories", force: :cascade do |t|
