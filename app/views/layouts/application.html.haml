@@ -1,0 +1,23 @@
+!!! 5
+%html
+  %head
+    %title Searchlight Demos
+    = stylesheet_link_tag    "application", :media => "all"
+    = javascript_include_tag "application"
+    = csrf_meta_tags
+
+  %body
+    %header
+      %nav
+        %ul
+          %li= menu_link "Without Searchlight", without_searchlight_path
+          %li= menu_link "Searchlight + ActiveRecord", searchlight_activerecord_path
+
+    %main
+      = yield
+
+    %footer
+      #links
+        %p
+          :markdown
+            A demo of [the Searchlight Ruby gem](https://github.com/nathanl/searchlight). Demo code is viewable at [github.com/nathanl/bookfinder](https://github.com/nathanl/bookfinder).

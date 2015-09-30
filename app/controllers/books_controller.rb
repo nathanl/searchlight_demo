@@ -1,8 +1,12 @@
 class BooksController < ApplicationController
 
-  def index
+  def searchlight_activerecord
     @search = BookSearch.new(search_params)
     @books  = @search.results
+  end
+
+  def without_searchlight
+    # @books  = @search.results
   end
 
   protected

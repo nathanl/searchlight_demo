@@ -1,0 +1,8 @@
+%h1 Searchlight + ActiveRecord
+
+= render 'searchlight_form', search: @search, url: searchlight_activerecord_path
+
+%h2 Book Results
+
+#book_search_results
+  = render 'search_results'

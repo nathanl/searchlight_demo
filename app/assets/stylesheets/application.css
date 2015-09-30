@@ -14,3 +14,23 @@
 
 h1, h2, h3, h4, th { color: #446633; }
 th { padding: 0 1em 0 0; text-align: left;}
+
+header nav {
+  background-color: #ddd;
+}
+
+header nav ul {
+  padding: 0 0.5em;
+}
+
+header nav li {
+  display: inline;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  padding-right: 1em;
+}
+
+header nav li.active {
+  content: " | "
+}
