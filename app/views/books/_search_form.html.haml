@@ -1,7 +1,7 @@
 = form_for @search, url: root_path, remote: remote_opt, method: :get do |f|
   %fieldset
-    = f.label      :title
-    = f.text_field :title
+    = f.label      :title_like
+    = f.text_field :title_like
 
   %fieldset
     = f.label      :author_name_like
@@ -14,6 +14,10 @@
   %fieldset
     = f.label   :author_also_wrote_in_category_id
     = f.select  :author_also_wrote_in_category_id, categories_collection, include_blank: true
+
+  %fieldset
+    = f.label   :board_book
+    = f.check_box  :board_book
 
   %button{type: :reset} Clear
   = f.submit 'Search'

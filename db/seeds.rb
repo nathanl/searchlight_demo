@@ -10,7 +10,8 @@ Category.destroy_all
   Book.create!(
     title: "The Runaway Bunny",
     author: Author.where(first_name: "Margaret", last_name: "Brown").first_or_create,
-    category: category
+    category: category,
+    board_book: true,
   )
   Book.create!(
     title: "The Cat in the Hat",
@@ -26,6 +27,12 @@ Category.destroy_all
     title: "Where the Sidewalk Ends",
     author: Author.where(first_name: "Shel", last_name: "Silverstein").first_or_create,
     category: category
+  )
+  Book.create!(
+    title: "Trucks Go",
+    author: Author.where(first_name: "Steve", last_name: "Light").first_or_create,
+    category: category,
+    board_book: true,
   )
 end
 
