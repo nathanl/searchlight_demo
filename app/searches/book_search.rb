@@ -14,7 +14,7 @@ class BookSearch < Searchlight::Search
   end
 
   def search_title_like
-    query.merge(Book.title_like(options[:title]))
+    query.merge(Book.title_like(options[:title_like]))
   end
 
   def search_category_id

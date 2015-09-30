@@ -17,4 +17,4 @@
           %td= book.board_book ? "Yes" : "No"
           %td= book.in_print ? "Yes" : "No"
 - else
-  Sadly, there are no matching books as of #{I18n.l Time.now}.
+  Sadly, there are no matching books as of #{I18n.l(Time.current)}.

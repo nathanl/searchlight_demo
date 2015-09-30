@@ -1,0 +1,31 @@
+= form_tag url, method: :get do
+
+  = fields_for :book_search do |f|
+
+    %fieldset
+      = f.label      :title_like
+      = f.text_field :title_like, value: @search_params[:title_like]
+
+    %fieldset
+      = f.label      :author_name_like
+      = f.text_field :author_name_like, value: @search_params[:author_name_like]
+
+    %fieldset
+      = f.label   :category_id
+      = f.select  :category_id, categories_collection, include_blank: true, selected: @search_params[:category_id]
+
+    %fieldset
+      = f.label   :author_also_wrote_in_category_id
+      = f.select  :author_also_wrote_in_category_id, categories_collection, include_blank: true, selected: @search_params[:author_also_wrote_in_category_id]
+
+    %fieldset
+      = f.label   :board_book
+      -# TODO - get this to re-popluate as checked if submitted checked
+      = f.check_box  :board_book, value: @search_params[:board_book]
+
+    %fieldset
+      = f.label   :in_print
+      = f.select  :in_print, [["Yes", true], ["No", false], ["Either", "either"]], selected: @search_params[:in_print]
+
+    %button{type: :reset} Clear
+    = f.submit 'Search'

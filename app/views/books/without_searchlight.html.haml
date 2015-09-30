@@ -1,10 +1,8 @@
 %h1 Without Searchlight
 
-(To be implemented)
+= render 'without_searchlight_form', search: @search, url: without_searchlight_path
 
--# = render 'searchlight_form', search: @search, url: searchlight_activerecord_path
--#
--# %h2 Book Results
--#
--# #book_search_results
--#   = render 'search_results'
+%h2 Book Results
+
+#book_search_results
+  = render 'search_results'
