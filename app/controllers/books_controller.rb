@@ -8,12 +8,6 @@ class BooksController < ApplicationController
   def without_searchlight
     @books = Book.all.order("title ASC")
 
-    # def options
-    #   super.tap { |opts|
-    #     opts[:in_print] ||= "either"
-    #   }
-    # end
-    
     if search_params[:title_like].present?
       @books = @books.merge(Book.title_like(search_params[:title_like]))
     end
@@ -39,10 +33,9 @@ class BooksController < ApplicationController
       @books = @books.where(board_book: search_params[:board_book])
     end
 
-    if search_params[:in_print].present?
-      unless search_params[:in_print].to_s == "either"
-        @books = @books.where(in_print: search_params[:in_print])
-      end
+    search_params[:in_print] ||= "either"
+    unless search_params[:in_print].to_s == "either"
+      @books = @books.where(in_print: search_params[:in_print])
     end
   end
 

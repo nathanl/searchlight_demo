@@ -20,12 +20,12 @@
 
     %fieldset
       = f.label   :board_book
-      -# TODO - get this to re-popluate as checked if submitted checked
-      = f.check_box  :board_book, value: @search_params[:board_book]
+      = f.check_box  :board_book, checked: @search_params[:board_book] == "1"
 
     %fieldset
       = f.label   :in_print
       = f.select  :in_print, [["Yes", true], ["No", false], ["Either", "either"]], selected: @search_params[:in_print]
+
 
     %button{type: :reset} Clear
     = f.submit 'Search'
