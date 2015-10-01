@@ -5,6 +5,11 @@ class BooksController < ApplicationController
     @books  = @search.results
   end
 
+  def searchlight_sequel
+    @search = Sequel::BookSearch.new(search_params)
+    @books  = @search.results
+  end
+
   def without_searchlight
     @books = Book.all.order("title ASC")
 

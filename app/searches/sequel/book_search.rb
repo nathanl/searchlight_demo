@@ -1,12 +1,12 @@
 # This search class assumes Sequel and ActionView
 require "searchlight/adapters/action_view"
 
-class BookSearch < Searchlight::Search
+class Sequel::BookSearch < Searchlight::Search
   include Searchlight::Adapters::ActionView
 
-  # def base_query
-  #   Book.all.order("title ASC")
-  # end
+  def base_query
+    Sequel::Book.order(:title)
+  end
   #
   # def options
   #   super.tap { |opts|
@@ -18,9 +18,9 @@ class BookSearch < Searchlight::Search
   #   query.merge(Book.title_like(options[:title_like]))
   # end
   #
-  # def search_category_id
-  #   query.joins(:category).where("categories.id = ?", options[:category_id])
-  # end
+  def search_category_id
+    query.eager_graph(:category).where("categories.id = ?", options[:category_id])
+  end
   #
   # def search_author_name_like
   #   query.joins(:author).merge(Author.name_like(options[:author_name_like]))
