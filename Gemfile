@@ -4,6 +4,8 @@ ruby "2.1.2"
 gem 'rails',          '~> 4.2.1'
 
 gem 'pg',             '~> 0.15'
+gem 'sequel-rails',   '0.9.11'
+
 # gem 'searchlight',    '~> 3.0.0'
 gem 'searchlight',    path: "~/code/searchlight"
 

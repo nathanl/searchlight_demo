@@ -123,6 +123,12 @@ GEM
       sass (~> 3.2.2)
       sprockets (~> 2.8, < 3.0)
       sprockets-rails (~> 2.0)
+    sequel (4.20.0)
+    sequel-rails (0.9.11)
+      actionpack (>= 3.2.0)
+      activemodel
+      railties (>= 3.2.0)
+      sequel (>= 3.28, < 5.0)
     sprockets (2.12.3)
       hike (~> 1.2)
       multi_json (~> 1.0)
@@ -157,6 +163,7 @@ DEPENDENCIES
   redcarpet (~> 3.1)
   sass-rails (~> 4.0)
   searchlight!
+  sequel-rails (= 0.9.11)
   uglifier (~> 2.5)
 
 BUNDLED WITH

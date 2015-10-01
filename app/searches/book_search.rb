@@ -1,3 +1,4 @@
+# This search class assumes ActiveRecord and ActionView
 require "searchlight/adapters/action_view"
 
 class BookSearch < Searchlight::Search
