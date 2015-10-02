@@ -13,7 +13,7 @@ module Sequel
     
     dataset_module do
       def title_like(title)
-        where("title ILIKE ?", "%#{title}%")
+        where(Sequel.ilike(:title, "%#{title}%"))
       end
     end 
   end

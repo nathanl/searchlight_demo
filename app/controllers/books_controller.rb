@@ -7,7 +7,7 @@ class BooksController < ApplicationController
 
   def searchlight_sequel
     @search = Sequel::BookSearch.new(search_params)
-    @books  = @search.results
+    @books  = @search.results.all
   end
 
   def without_searchlight
@@ -47,7 +47,7 @@ class BooksController < ApplicationController
   protected
 
   def search_params
-    @search_params ||= params.delete(:book_search) || {}
+    @search_params ||= params.delete(:book_search) || params.delete(:sequel_book_search) || {}
   end
 
 end

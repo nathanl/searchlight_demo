@@ -19,7 +19,7 @@ class BookSearch < Searchlight::Search
   end
 
   def search_category_id
-    query.joins(:category).where("categories.id = ?", options[:category_id])
+    query.where(category_id: options[:category_id])
   end
 
   def search_author_name_like

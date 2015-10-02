@@ -12,7 +12,9 @@ module Sequel
 
     dataset_module do
       def name_like(name)
-        where("concat(first_name, ' ', last_name) ILIKE ?", "%#{name}%")
+        where(
+          Sequel.join([:first_name, :last_name], ' ').ilike("%#{name}%")
+        )
       end
     end 
 
