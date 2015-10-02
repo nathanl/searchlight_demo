@@ -18,8 +18,8 @@ class Sequel::BookSearch < Searchlight::Search
     query.where(Sequel.ilike(:title, "%#{options.fetch(:title_like)}%"))
   end
 
-  def search_category_id
-    query.where(category_id: options.fetch(:category_id ))
+  def search_category_in
+    query.where(category_id: options.fetch(:category_in).select {|v| filled?(v) })
   end
 
   def search_author_name_like

@@ -18,8 +18,8 @@ class BookSearch < Searchlight::Search
     query.merge(Book.title_like(options[:title_like]))
   end
 
-  def search_category_id
-    query.where(category_id: options[:category_id])
+  def search_category_in
+    query.where(category_id: options.fetch(:category_in).select {|v| filled?(v) })
   end
 
   def search_author_name_like

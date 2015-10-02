@@ -21,8 +21,8 @@ class BooksController < ApplicationController
       @books = @books.joins(:author).merge(Author.name_like(search_params[:author_name_like]))
     end
 
-    if search_params[:category_id].present?
-      @books = @books.joins(:category).where("categories.id = ?", search_params[:category_id])
+    if search_params[:category_in].present?
+      @books = @books.where(category_id: search_params.fetch(:category_in).select {|v| v.present? })
     end
 
     if search_params[:author_also_wrote_in_category_id].present?
