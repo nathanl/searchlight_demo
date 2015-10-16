@@ -7,7 +7,11 @@ class BooksController < ApplicationController
 
   def searchlight_sequel
     @search = Sequel::BookSearch.new(search_params)
-    @books  = @search.results.all
+    if true
+      @books  = @search.results.all
+    else
+      render text: @search.results.sql
+    end
   end
 
   def without_searchlight
