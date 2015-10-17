@@ -4,10 +4,6 @@ require "searchlight/adapters/action_view"
 class Sequel::BookSearch < Searchlight::Search
   include Searchlight::Adapters::ActionView
 
-  # todo seem to be getting everything correctly but category options seem
-  # switched. I think the SQL is correct, we just have duplicate column names
-  # and the action view adapter is grabbing the wrong one?
-
   def base_query
     Sequel::Book.order(Sequel.qualify(:books, :title))#.eager([:category, :author])
   end
@@ -31,15 +27,16 @@ class Sequel::BookSearch < Searchlight::Search
   end
 
   def search_author_also_wrote_in_category_id
-    query.join(
-      :authors, {id: :author_id}, {table_alias: :author_for_other_books, implicit_qualifier: :books}
+    author_ids_for_category = Sequel::Book.join(
+      :authors, {id: :author_id}
     ).join(
-      :books, {author_id: :id}, {table_alias: :other_books}
-    ).join(
-      :categories, {id: :category_id}, {table_alias: :other_categories}
+      :books, {author_id: :id}, table_alias: :other_books
     ).where(
       Sequel.qualify(:other_books, :category_id) => options.fetch(:author_also_wrote_in_category_id)
+    ).select(
+      Sequel.qualify(:authors, :id)
     )
+    query.where(author_id: author_ids_for_category)
   end
 
   def search_board_book
