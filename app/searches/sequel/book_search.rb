@@ -5,7 +5,7 @@ class Sequel::BookSearch < Searchlight::Search
   include Searchlight::Adapters::ActionView
 
   def base_query
-    Sequel::Book.order(Sequel.qualify(:books, :title))#.eager([:category, :author])
+    Sequel::Book.order(Sequel.qualify(:books, :title)).eager([:category, :author])
   end
 
   def options
@@ -23,7 +23,7 @@ class Sequel::BookSearch < Searchlight::Search
   end
 
   def search_author_name_like
-    query.inner_join(:authors, id: :author_id).where(Sequel.join([Sequel.qualify(:authors, :first_name), Sequel.qualify(:authors, :last_name)], ' ').ilike("%#{options.fetch(:author_name_like)}%"))
+    query.join(:authors, id: :author_id).where(Sequel.join([Sequel.qualify(:authors, :first_name), Sequel.qualify(:authors, :last_name)], ' ').ilike("%#{options.fetch(:author_name_like)}%"))
   end
 
   def search_author_also_wrote_in_category_id
