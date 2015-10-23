@@ -28,8 +28,8 @@ class BookSearch < Searchlight::Search
 
   def search_author_also_wrote_in_category_id
     query_string = <<-YE_OLDE_QUERY_LANGUAGE.strip_heredoc
-    INNER JOIN authors                        ON books.author_id         = authors.id
-    INNER JOIN books      AS other_books      ON other_books.author_id   = authors.id
+    INNER JOIN authors    AS category_authors ON books.author_id         = category_authors.id
+    INNER JOIN books      AS other_books      ON other_books.author_id   = category_authors.id
     INNER JOIN categories AS other_categories ON other_books.category_id = other_categories.id
     YE_OLDE_QUERY_LANGUAGE
     query.joins(query_string).where("other_categories.id = ?", options[:author_also_wrote_in_category_id])
