@@ -1,7 +1,6 @@
 # TODO 
 
 - Add examples of:
-  - searchlight + sequel
   - searchlight in mounted Sinatra and Roda apps (new view adapters needed?)
   - search with ransack (and others?) - arbitrary queries like this? https://github.com/activerecord-hackery/ransack/wiki/Using-Ransackers#6-passing-arguments-to-a-ransacker
 
