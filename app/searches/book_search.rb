@@ -19,7 +19,7 @@ class BookSearch < Searchlight::Search
   end
 
   def search_category_in
-    query.where(category_id: options.fetch(:category_in).reject {|v| blank?(v) })
+    query.where(category_id: options.fetch(:category_in))
   end
 
   def search_author_name_like

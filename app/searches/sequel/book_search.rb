@@ -19,7 +19,7 @@ class Sequel::BookSearch < Searchlight::Search
   end
 
   def search_category_in
-    query.where(Sequel.qualify(:books, :category_id) => options.fetch(:category_in).reject {|v| blank?(v) })
+    query.where(Sequel.qualify(:books, :category_id) => options.fetch(:category_in))
   end
 
   def search_author_name_like
