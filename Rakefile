@@ -4,4 +4,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-BookFinder::Application.load_tasks
+SearchlightDemo::Application.load_tasks

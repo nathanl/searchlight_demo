@@ -1,8 +1,6 @@
 # Searchlight Demo
 
-This is a demo app for the [Searchlight](https://github.com/nathanl/searchlight) ruby gem.
-
-It's the code behind [this tutorial video](https://vimeo.com/69179161) and [this demo app](http://bookfinder-searchlight-demo.herokuapp.com/).
+[Searchlight](https://github.com/nathanl/searchlight) is a Ruby gem for doing searches with ORMs, and this is the code behind [its demo app](https://bookfinder-searchlight-demo.herokuapp.com/).
 
 ## Usage
 
