@@ -5,7 +5,7 @@ gem 'rails',          '~> 4.2.4'
 gem 'sinatra',        '~> 1.4'
 
 gem 'pg',             '~> 0.15'
-# gem 'sequel-rails',   '0.9.11'
+gem 'sequel-rails',   '0.9.11'
 
 gem 'searchlight',    '~> 4.0'
 
