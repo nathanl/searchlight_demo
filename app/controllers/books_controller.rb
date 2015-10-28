@@ -1,5 +1,8 @@
 class BooksController < ApplicationController
 
+  def home
+  end
+
   def searchlight_activerecord
     @search = BookSearch.new(search_params)
     @books  = @search.results

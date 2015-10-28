@@ -10,6 +10,7 @@
     %header
       %nav
         %ul
+          %li= menu_link "Home", root_path
           %li= menu_link "Without Searchlight", without_searchlight_path
           %li= menu_link "Searchlight + ActiveRecord", searchlight_activerecord_path
           %li= menu_link "Searchlight + Sequel", searchlight_sequel_path
@@ -18,7 +19,10 @@
       = yield
 
     %footer
-      #links
-        %p
-          :markdown
-            A demo of [the Searchlight Ruby gem](https://github.com/nathanl/searchlight). Demo code is viewable at [https://github.com/nathanl/searchlight_demo](https://github.com/nathanl/searchlight_demo).
+      - if content_for?(:footer)
+        = yield(:footer)
+      - else
+        #links
+          %p
+            :markdown
+              A demo of [the Searchlight Ruby gem](https://github.com/nathanl/searchlight). Demo code is viewable at [https://github.com/nathanl/searchlight_demo](https://github.com/nathanl/searchlight_demo).
