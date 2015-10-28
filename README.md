@@ -1,4 +1,4 @@
-# BookFinder
+# Searchlight Demo
 
 This is a demo app for the [Searchlight](https://github.com/nathanl/searchlight) ruby gem.
 
