@@ -7,8 +7,7 @@ gem 'sinatra',        '~> 1.4'
 gem 'pg',             '~> 0.15'
 gem 'sequel-rails',   '0.9.11'
 
-# gem 'searchlight',    '~> 3.0.0'
-gem 'searchlight',    path: "~/code/searchlight"
+gem 'searchlight',    '~> 4.0'
 
 gem 'american_date',  '~> 1.1'
 gem 'faker',          '~> 1.1.2'
