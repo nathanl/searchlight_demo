@@ -7,7 +7,7 @@ gem 'sinatra',        '~> 1.4'
 gem 'pg',             '~> 0.15'
 gem 'sequel-rails',   '0.9.11'
 
-gem 'searchlight',    '~> 4.0'
+gem 'searchlight',    '~> 4.1'
 
 gem 'american_date',  '~> 1.1'
 
