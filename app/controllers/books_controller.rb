@@ -24,11 +24,11 @@ class BooksController < ApplicationController
       @books = @books.joins(:author).merge(Author.name_like(search_params[:author_name_like]))
     end
 
-    if search_params[:category_in].present?
+    if search_params[:category_in].present? && search_params[:category_in].any?(&:present?)
       @books = @books.where(category_id: search_params.fetch(:category_in).select {|v| v.present? })
     end
 
-    if search_params[:author_also_wrote_in_category_id].present?
+    if search_params[:author_also_wrote_in_category_id].present? && search_params[:author_also_wrote_in_category_id].any?(&:present?)
       query_string = <<-YE_OLDE_QUERY_LANGUAGE.strip_heredoc
       INNER JOIN authors                        ON books.author_id         = authors.id
       INNER JOIN books      AS other_books      ON other_books.author_id   = authors.id
